@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+form {
+  justify-self: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#submit-button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 25px;
+  background-image: url("./search-icon.png");
+  background-position: center;
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+
+#search {
+  width: 20%;
+  height: 40px;
+  border: solid black 3px;
+  border-radius: 25px;
+  margin-right: 15px;
+  padding-left: 10px;
+}
