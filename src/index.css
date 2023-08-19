@@ -24,6 +24,7 @@ form {
 }
 
 #submit-button {
+  user-select: none;
   width: 40px;
   height: 40px;
   border: none;
@@ -49,6 +50,7 @@ form {
 }
 
 #search {
+  user-select: none;
   width: 240px;
   height: 35px;
   background: transparent;
@@ -85,6 +87,7 @@ form {
 }
 
 #temp-toggle {
+  user-select: none;
   width: 40px;
   height: 40px;
   background: transparent;
