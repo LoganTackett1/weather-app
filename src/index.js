@@ -7,6 +7,7 @@ const input = document.getElementById("search");
 const location = document.getElementById("location");
 const temp = document.getElementById("temperature");
 const toggleBtn = document.getElementById("temp-toggle");
+const weatherData = document.getElementById("weather-data");
 let tempToggle = "f";
 let current = null;
 
@@ -31,15 +32,18 @@ async function getData(loc) {
     `https://api.weatherapi.com/v1/current.json?key=903a2f5e3cc649fc881174419230908&q=${loc}`,
     { mode: "cors" }
   ).then((res) => res.json());
-  console.log(data);
   return data;
 }
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  location.textContent = "";
+  temp.textContent = "";
+  weatherData.classList.remove("fade");
   getData(input.value).then((data) => {
     current = { ...data };
     location.textContent = `${data.location.name}, ${data.location.region}`;
     temp.textContent = `${data.current[`temp_${tempToggle}`]}°`;
+    weatherData.classList.add("fade");
   });
 });
