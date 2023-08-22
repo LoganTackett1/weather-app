@@ -8,6 +8,7 @@ const location = document.getElementById("location");
 const temp = document.getElementById("temperature");
 const toggleBtn = document.getElementById("temp-toggle");
 const weatherData = document.getElementById("weather-data");
+weatherData.classList.add("fade");
 let tempToggle = "f";
 let current = null;
 
@@ -42,8 +43,20 @@ form.addEventListener("submit", (e) => {
   weatherData.classList.remove("fade");
   getData(input.value).then((data) => {
     current = { ...data };
-    location.textContent = `${data.location.name}, ${data.location.region}`;
-    temp.textContent = `${data.current[`temp_${tempToggle}`]}°`;
-    weatherData.classList.add("fade");
+    setTimeout(() => {
+      if (data.error) {
+        if (data.error.code === 1003) {
+          location.textContent = `No Location Selected`;
+          temp.textContent = ``;
+        } else if (data.error.code === 1006) {
+          location.textContent = `Invalid Location`;
+          temp.textContent = ``;
+        }
+      } else {
+        location.textContent = `${data.location.name}, ${data.location.region}`;
+        temp.textContent = `${data.current[`temp_${tempToggle}`]}°`;
+      }
+      weatherData.classList.add("fade");
+    }, 500);
   });
 });
