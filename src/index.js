@@ -60,3 +60,26 @@ form.addEventListener("submit", (e) => {
     }, 500);
   });
 });
+
+let hDiff = 0;
+let wDiff = 0;
+
+window.addEventListener("mousemove", (e) => {
+  const height = window.innerHeight;
+  const width = window.innerWidth;
+  hDiff = e.clientY - height;
+  wDiff = e.clientX - width;
+});
+
+const stars = document.getElementById("stars");
+let deg = 0;
+function animationLoop() {
+  setTimeout(() => {
+    stars.style.transform = `translate(${-wDiff / 100}px,${
+      -hDiff / 100
+    }px) rotate(${deg}deg)`;
+    deg += 0.01125;
+    animationLoop();
+  }, 20);
+}
+animationLoop();

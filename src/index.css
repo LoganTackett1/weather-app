@@ -5,17 +5,24 @@
 }
 
 body {
+  position: relative;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
-  background-image: url("./wp7775349-pink-space-wallpapers.jpg");
-  background-size: 1920px 1080px;
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  overflow: hidden;
+  z-index: 2;
 }
 
 form {
@@ -143,4 +150,11 @@ form {
 #temperature {
   font-size: 60px;
   font-weight: bold;
+}
+
+#stars {
+  display: block;
+  width: calc((1.05 * sqrt((100vw * 100vw) + (100vh * 100vh))) * (3840 / 2160));
+  height: calc(1.05 * sqrt((100vw * 100vw) + (100vh * 100vh)));
+  z-index: 1;
 }
