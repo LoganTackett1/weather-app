@@ -6,20 +6,23 @@
     <title>Weather App</title>
   </head>
   <body>
-    <form action="" method="post" id="search-bar" autocomplete="off">
-      <input
-        type="text"
-        name="search"
-        id="search"
-        placeholder="search location..."
-      />
-      <button type="submit" id="submit-button"></button>
-    </form>
-    <button id="temp-toggle">°F</button>
-    <div id="weather-data">
-      <div id="location">No Location Selected</div>
-      <div id="temperature"></div>
+    <div id="container">
+      <form action="" method="post" id="search-bar" autocomplete="off">
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="search location..."
+        />
+        <button type="submit" id="submit-button"></button>
+      </form>
+      <button id="temp-toggle">°F</button>
+      <div id="weather-data">
+        <div id="location">No Location Selected</div>
+        <div id="temperature"></div>
+      </div>
     </div>
+    <img id="stars" src="./66d71f65e6d00203fbfa.jpg" alt="background" />
     <script src="main.js" defer></script>
   </body>
 </html>
